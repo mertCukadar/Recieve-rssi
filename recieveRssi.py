@@ -1,13 +1,11 @@
+#https://medium.com/macoclock/getting-a-list-of-nearby-wifi-access-points-in-python-on-macos-726d9fb59001
+#https://python.plainenglish.io/estimating-distance-using-rssi-python-8f3d44c38108
+
+import subprocess
 
 
-import rssi
+scan_cmd = subprocess.Popen(['airport', '-I'], stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+scan_out, scan_err = scan_cmd.communicate()
 
-interface = 'en0'
-rssi_scanner = rssi.RSSI_Scan(interface)
-
-ssids = [b"FiberHGV_ZTNZ43_2.4GHz"]
-
-ap_info = rssi_scanner.getAPinfo(networks=ssids, sudo=True)
-
-print(ap_info)
-
+print(scan_out)
+print(scan_err)
