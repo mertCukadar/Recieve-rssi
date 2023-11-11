@@ -16,4 +16,9 @@
 - `NSS`: Uygun Uzay Sinyali (NSS).
 - `channel`: Kullanılan kablosuz kanal numarası.
 
+## To Activate airport
+
+> sudo ln -s /System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport /usr/local/bin/airport
+
+## Test results
 ![](Test_results/second_with_10k_val.png)
